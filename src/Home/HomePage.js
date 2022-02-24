@@ -163,9 +163,11 @@ function HomePage() {
             </div>
             <div className='banner'>
                 <img src={cat} alt='banner' />
-                <span>Pet Care</span>
-                <p>Care your pets with love</p>
-                <button>SEE MORE</button>
+                <div className='banner-title'>
+                    <span>Pet Care</span>
+                    <p>Care your pets with love</p>
+                    <button>SEE MORE</button>
+                </div>
             </div>
             <div className='pet-list'>
                 <h3 className='title-list'>

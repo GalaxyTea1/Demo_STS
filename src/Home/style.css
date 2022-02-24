@@ -54,10 +54,14 @@
     object-fit: cover;
 }
 
-.banner span {
+.banner-title {
     position: absolute;
-    top: 30%;
+    top: 45%;
     right: 30%;
+}
+
+.banner span {
+
     font-size: 64px;
     font-weight: 600;
     color: whitesmoke;
@@ -65,9 +69,7 @@
 }
 
 .banner p {
-    position: absolute;
-    top: 40%;
-    right: 25%;
+    margin-top: 0;
     font-size: 30px;
     font-weight: 600;
     color: whitesmoke;
@@ -75,9 +77,6 @@
 }
 
 .banner button {
-    position: absolute;
-    top: 60%;
-    right: 40%;
     width: 100px;
     height: 40px;
     font-weight: 400;
@@ -335,6 +334,16 @@ li.dropdown {
     }
     .link-pages{
         display: none;
+    }
+    .banner-title {
+        position: absolute;
+        top: 45%;
+        right: 1%;
+    }
+    .banner img {
+        width: 120%;
+        height: 500px;
+        object-fit: cover;
     }
 }
 /* Table: width >= 740 and width <= 1024 */
