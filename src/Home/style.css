@@ -6,10 +6,10 @@
 .menu-nav {
     display: flex;
     align-items: center;
-    margin-left: 40px;
     margin-top: 20px;
     justify-content: space-between;
     justify-items: center;
+    margin-left: 40px;
 }
 
 .title {
@@ -26,13 +26,12 @@
 .link-pages {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    /* margin-left: 40%; */
 }
 
 .link-pages a {
     display: block;
-    padding: 18px 20px;
+    padding: 15px 15px;
     margin: 18px 20px;
     text-decoration: none;
     font-size: 20px;
@@ -57,8 +56,8 @@
 
 .banner span {
     position: absolute;
-    top: 180px;
-    right: 500px;
+    top: 30%;
+    right: 30%;
     font-size: 64px;
     font-weight: 600;
     color: whitesmoke;
@@ -67,8 +66,8 @@
 
 .banner p {
     position: absolute;
-    top: 220px;
-    right: 445px;
+    top: 40%;
+    right: 25%;
     font-size: 30px;
     font-weight: 600;
     color: whitesmoke;
@@ -77,8 +76,8 @@
 
 .banner button {
     position: absolute;
-    top: 320px;
-    right: 600px;
+    top: 60%;
+    right: 40%;
     width: 100px;
     height: 40px;
     font-weight: 400;
@@ -92,10 +91,6 @@
     background-color: #4ac42f;
     cursor: pointer;
     /* transform: scale(0.9); */
-}
-
-li {
-    float: left;
 }
 
 li a,
@@ -157,9 +152,37 @@ li.dropdown {
 }
 
 .cat-list {
+    display: grid;
+    grid-gap: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(293px, 1fr));
+    margin: 0 32px;
+}
+
+.cat-item {
+    border-radius: 10px;
+    height: 220px;
+    margin-bottom: 16px;
+}
+
+.cat-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.cat-item span{
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'Redressed';
+}
+
+
+
+/* .cat-list {
     display: flex;
     flex-flow: wrap;
-    height: 110%;
+    height: 100%;
     background-color: white;
 }
 
@@ -180,7 +203,7 @@ li.dropdown {
     color: green;
     cursor: pointer;
     font-weight: bold;
-}
+} */
 
 #footer {
     padding: 64px 16px;
@@ -195,6 +218,7 @@ li.dropdown {
 #footer .social-list a {
     color: rgba(0, 0, 0, 0.6);
     text-decoration: none;
+    margin: 0 4px;
 }
 
 #footer .copyright a:hover,
@@ -211,27 +235,136 @@ li.dropdown {
     text-decoration: none;
 }
 
+.nav-mobile{
+    width: 28px;
+    height: 28px;
+    color: #551a8b;
+    display: none;
+}
+
+.nav-overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.nav-moblie-item {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    max-width: 100%;
+    background-color: white;
+    z-index: 2;
+    transform: translateX(100%);
+    transition: transform linear 0.2s, opacity linear 0.2s;
+    opacity: 0;
+}
+
+.nav-mobile-list{
+    margin-top: 48px;
+    
+}
+
+.item-mobile{
+    color: #333;
+    display: block;
+    padding: 12px 0;
+    margin-left: 12px;
+    font-size: 1.4rem;
+}
+
+.item-mobile i{
+    color: green;
+    margin-right: 20px;
+    margin-top: 6px;
+}
+
+.nav-mobile-list a{
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav-close {
+    width: 20px;
+    height: 20px;
+    color: #666;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.nav-close:hover {
+    cursor: pointer;
+}
+
+.nav-input{
+    display: none;
+}
+
+.nav-input:checked ~ .nav-moblie-item{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.nav-input:checked ~ .nav-overlay {
+    display: block;
+}
+
+
 /* mobile: width < 740px */
 @media only screen and (max-width: 46.1875em) {
-    html{
-        background-color: white;
-    }
-    body{
-        width: 230%;
-        background: white;
-    }
     .title{
         font-size: 24px;
+        font-weight: bold;
+        margin-left: 0px;
     }
-    .link-pages a{
-        margin: 0 10px;
+    .nav-mobile{
+        width: 28px;
+        height: 28px;
+        color: #551a8b;
+        display: block;
+        padding: 20px 20px;
+    }
+    .link-pages{
+        display: none;
     }
 }
 /* Table: width >= 740 and width <= 1024 */
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-
+    .title{
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 0px;
+    }
+    .nav-mobile{
+        width: 28px;
+        height: 28px;
+        color: #551a8b;
+        display: block;
+        padding: 20px 20px;
+    }
+    .link-pages{
+        display: none;
+    }
 }
 /* pc: width >= 1024 */
 @media only screen and (min-width: 64em) {
 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
