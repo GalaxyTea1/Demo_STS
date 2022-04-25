@@ -4,7 +4,6 @@ import { GLOBALTYPES } from '../type/globalType';
 export const login = (data) => async (dispatch) => {
     try {
         const res = await postDataAPI('login', data);
-        console.log(res);
         dispatch({
             type: GLOBALTYPES.AUTH,
             payload: {
@@ -15,7 +14,6 @@ export const login = (data) => async (dispatch) => {
         localStorage.setItem('login-first', true);
     } catch (error) {
         dispatch({ type: GLOBALTYPES.ALERT, payload: error.response.data.msg });
-        console.log(error.response.data.msg);
     }
 };
 
@@ -40,7 +38,6 @@ export const refreshToken = () => async (dispatch) => {
 export const register = (data) => async (dispatch) => {
     try {
         const res = await postDataAPI('register', data);
-        console.log(res);
         dispatch({
             type: GLOBALTYPES.AUTH,
             payload: {
